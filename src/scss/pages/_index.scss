@@ -45,7 +45,8 @@
     display: flex;
     justify-content: space-between;
     background-color: $color-tertiary;
-    height: 15vh;
+    height: 120px;
+    border-radius: 5px 5px 0 0;
   }
   &__header-day-container {
     display: flex;
@@ -57,7 +58,7 @@
   &__header-container {
     align-self: center;
     &--month {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
     }
   }
   &__header-weekday {
@@ -65,7 +66,7 @@
     font-size: 1.2rem;
   }
   &__list {
-    height: 47vh;
+    height: 330px;
   }
   &__add {
     display: flex;
