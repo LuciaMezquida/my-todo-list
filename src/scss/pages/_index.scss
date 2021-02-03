@@ -40,6 +40,7 @@
     box-shadow: 1px 1px 15px -5px #021916;
   }
   &__header {
+    padding: 0 5px;
     color: $color-light;
     display: flex;
     justify-content: space-between;
@@ -48,6 +49,20 @@
   }
   &__header-day-container {
     display: flex;
+  }
+  &__header-day {
+    font-size: 4.8rem;
+    align-self: center;
+  }
+  &__header-container {
+    align-self: center;
+    &--month {
+      font-size: 1.8rem;
+    }
+  }
+  &__header-weekday {
+    align-self: flex-end;
+    font-size: 1.2rem;
   }
   &__list {
     height: 47vh;
