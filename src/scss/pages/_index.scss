@@ -5,7 +5,7 @@
   height: 96vh;
   &__layerSmall {
     z-index: 1;
-    height: 510px;
+    height: 500px;
     width: 310px;
     background-color: $color-light;
     position: absolute;
@@ -18,7 +18,7 @@
     }
   }
   &__layerMedium {
-    height: 500px;
+    height: 480px;
     width: 320px;
     position: absolute;
     background-color: $color-light;

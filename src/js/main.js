@@ -36,5 +36,3 @@ day.innerHTML = date.getDate();
 month.innerHTML = months[date.getMonth()];
 year.innerHTML = date.getFullYear();
 weekDay.innerHTML = weekDays[date.getDay()];
-console.log(date);
-console.log(day);
