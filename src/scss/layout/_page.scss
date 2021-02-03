@@ -1,7 +1,9 @@
 body {
   padding: 2rem;
   height: 100vh;
-  background-image: url('../images/bg-adalab.png');
-  background-color: $color-bg;
+  background: linear-gradient(180deg, #58e8de 35%, #29838e 100%);
   font-family: $font-main;
+}
+.list {
+  list-style: none;
 }
