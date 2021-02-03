@@ -4,7 +4,9 @@ let month = document.querySelector(".js-month");
 let year = document.querySelector(".js-year");
 let weekDay = document.querySelector(".js-weekDay");
 const listContainer = document.querySelector(".js-list");
-const addButon = document.querySelector(".js-btn");
+const addButton = document.querySelector(".js-btn");
+const closeButton = document.querySelector(".js-close");
+const taskForm = document.querySelector(".js-form");
 
 const months = [
   "Enero",
@@ -36,3 +38,10 @@ day.innerHTML = date.getDate();
 month.innerHTML = months[date.getMonth()];
 year.innerHTML = date.getFullYear();
 weekDay.innerHTML = weekDays[date.getDay()];
+
+addButton.addEventListener("click", () => {
+  taskForm.classList.remove("hide");
+});
+closeButton.addEventListener("click", () => {
+  taskForm.classList.add("hide");
+});
