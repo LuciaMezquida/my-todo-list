@@ -79,6 +79,10 @@
       border: 4px solid $color-main;
       border-radius: 50%;
       font-size: 30px;
+      outline-style: none;
+      &:active {
+        transform: scale(0.95);
+      }
     }
   }
 }

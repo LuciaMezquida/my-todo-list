@@ -1,0 +1,9 @@
+.addTask {
+  border: 1px solid black;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
