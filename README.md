@@ -1,6 +1,6 @@
-# My TODO list
-
 <img src="https://media.giphy.com/media/H4iCOH5qHMP6qwIRGF/giphy.gif" width="200">
+
+# My TODO list
 
 Vamos a realizar una aplicación simple de lista de tareas con una funcionalidad básica: 1. Completar una tarea 2. Desmarcar una tarea completada 3. Añadir una tarea nueva
 
@@ -35,13 +35,6 @@ Este comando:
    - Combina los diferentes ficheros de HTML y los agrupa en uno o varios ficheros HTML.
 
 Después de ejecutar `npm start` ya puedes empezar a editar todos los ficheros que están dentro de la carpeta `src/` y programar cómodamente.
-
-
-## Flujo de archivos con Gulp
-
-Estas tareas de Gulp producen el siguiente flujo de archivos:
-
-![Gulp flow](./gulp-flow.png)
 
 ## `gulpfile.js` y `config.json`
 
