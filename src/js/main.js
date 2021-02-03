@@ -6,6 +6,7 @@ let weekDay = document.querySelector(".js-weekDay");
 const listContainer = document.querySelector(".js-list");
 const addButton = document.querySelector(".js-btn");
 const closeButton = document.querySelector(".js-close");
+const submitButton = document.querySelector(".js-submit");
 const taskForm = document.querySelector(".js-form");
 
 const months = [
