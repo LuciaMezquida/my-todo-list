@@ -8,6 +8,8 @@
     align-items: center;
     &--title {
       color: $color-light;
+      align-self: flex-start;
+      margin-left: 3.2rem;
     }
     &--input {
       outline-style: none;
@@ -16,16 +18,37 @@
       border-radius: 5px;
       width: 200px;
       height: 40px;
+      padding-left: 5px;
+      &::placeholder {
+        color: #ffffff71;
+      }
     }
     &--submit {
+      margin: 1.6rem 0;
+      color: $color-light;
+      background-color: transparent;
+      border-radius: 20px;
+      width: 100px;
+      height: 35px;
+      border: 1px solid $color-light;
+      outline-style: none;
+      &:hover {
+        background-color: #ffffff33;
+      }
     }
   }
   &__close {
+    width: 30px;
+    height: 30px;
     border: none;
+    border-radius: 50%;
     background: none;
-    color: $color-secondary;
-    font-size: 1.6rem;
+    color: $color-light;
+    font-size: 1.2rem;
     outline-style: none;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.199);
+    }
   }
 }
 .hide {
