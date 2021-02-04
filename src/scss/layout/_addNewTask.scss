@@ -42,6 +42,7 @@
       }
     }
     &--submit {
+      cursor: pointer;
       margin: 1.6rem 0;
       color: $color-light;
       background-color: transparent;
@@ -56,6 +57,9 @@
     }
   }
   &__close {
+    cursor: pointer;
+    position: relative;
+    left: 249px;
     margin: 2px;
     width: 27px;
     height: 27px;
