@@ -11,39 +11,7 @@ const taskForm = document.querySelector(".js-form");
 const inputText = document.querySelector(".js-input");
 
 let inputValue = "";
-
-///////* GENERATE DATE AND PUT IT INTO DOM *//////////
-
-const months = [
-  "Enero",
-  "Febrero",
-  "Marzo",
-  "Abril",
-  "Mayo",
-  "Junio",
-  "Julio",
-  "Agosto",
-  "Septiembre",
-  "Octubre",
-  "Noviembre",
-  "Diciembre",
-];
-
-const weekDays = [
-  "Domingo",
-  "Lunes",
-  "Martes",
-  "Miercoles",
-  "Jueves",
-  "Viernes",
-  "Sabado",
-];
-
-const date = new Date();
-day.innerHTML = date.getDate();
-month.innerHTML = months[date.getMonth()];
-year.innerHTML = date.getFullYear();
-weekDay.innerHTML = weekDays[date.getDay()];
+let allCheckbox = [];
 
 ///////* EVENTS *//////////
 
@@ -65,15 +33,38 @@ inputText.addEventListener("keyup", (ev) => {
 
 submitButton.addEventListener("click", () => {
   const task = document.createElement("li");
-  task.classList.add("list");
   const checkbox = document.createElement("input");
-  checkbox.setAttribute("type", "checkbox");
-  checkbox.classList.add("checkbox");
+  const customCheckbox = document.createElement("span");
   const checkboxLabel = document.createElement("label");
+  task.classList.add("list");
+  checkbox.setAttribute("type", "checkbox");
+  checkbox.setAttribute("name", inputValue);
+  checkbox.classList.add("checkbox");
+  customCheckbox.classList.add("custom-check");
+  customCheckbox.setAttribute("name", inputValue);
   checkboxLabel.innerHTML = inputValue;
   task.appendChild(checkbox);
+  task.appendChild(customCheckbox);
   task.appendChild(checkboxLabel);
   taskList.appendChild(task);
   inputText.value = "";
   taskForm.classList.add("hide");
+  selectCheckTask(customCheckbox);
 });
+
+const selectCheckTask = (customCheckbox) => {
+  allCheckbox = document.querySelectorAll(".checkbox");
+  const allcustomCheckbox = document.querySelectorAll(".custom-check");
+
+  for (let i = 0; i < allCheckbox.length; i++) {
+    allCheckbox[i].addEventListener("click", (ev) => {
+      if (ev.currentTarget.checked) {
+        allcustomCheckbox[i].classList.add("checked");
+      } else {
+        allcustomCheckbox[i].classList.remove("checked");
+      }
+    });
+  }
+};
+
+///////* MANAGE EVERY TASK IN THE LIST *//////////

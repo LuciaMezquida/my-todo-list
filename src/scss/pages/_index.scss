@@ -90,5 +90,23 @@
   }
 }
 .checkbox {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
   margin-right: 5px;
+  transform: translate(22px, 1px);
+  opacity: 0;
+}
+.custom-check {
+  transform: translate(0, 5px);
+  margin: 5px 5px 0 0;
+  border: 1px solid $color-tertiary;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+.checked {
+  background-image: url(https://img.icons8.com/metro/16/000000/checkmark.png);
+  background-position: center;
 }
