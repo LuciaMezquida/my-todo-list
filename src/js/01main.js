@@ -10,6 +10,9 @@ const submitButton = document.querySelector(".js-submit");
 const taskForm = document.querySelector(".js-form");
 const inputText = document.querySelector(".js-input");
 
+const taskList = document.createElement("ul");
+listContainer.appendChild(taskList);
+
 let inputValue = "";
 let allCheckbox = [];
 
@@ -23,9 +26,6 @@ closeButton.addEventListener("click", () => {
 });
 
 ///////* CREATE LIST AND PUT IT INTO DOM *//////////
-
-const taskList = document.createElement("ul");
-listContainer.appendChild(taskList);
 
 inputText.addEventListener("keyup", (ev) => {
   inputValue = ev.currentTarget.value;
@@ -42,6 +42,7 @@ submitButton.addEventListener("click", () => {
   checkbox.classList.add("checkbox");
   customCheckbox.classList.add("custom-check");
   customCheckbox.setAttribute("name", inputValue);
+  checkboxLabel.classList.add("task-label");
   checkboxLabel.innerHTML = inputValue;
   task.appendChild(checkbox);
   task.appendChild(customCheckbox);
@@ -54,14 +55,17 @@ submitButton.addEventListener("click", () => {
 
 const selectCheckTask = (customCheckbox) => {
   allCheckbox = document.querySelectorAll(".checkbox");
-  const allcustomCheckbox = document.querySelectorAll(".custom-check");
+  const allCustomCheckbox = document.querySelectorAll(".custom-check");
+  const allCheckboxLabel = document.querySelectorAll(".task-label");
 
   for (let i = 0; i < allCheckbox.length; i++) {
     allCheckbox[i].addEventListener("click", (ev) => {
       if (ev.currentTarget.checked) {
-        allcustomCheckbox[i].classList.add("checked");
+        allCustomCheckbox[i].classList.add("checked");
+        allCheckboxLabel[i].classList.add("removed");
       } else {
-        allcustomCheckbox[i].classList.remove("checked");
+        allCustomCheckbox[i].classList.remove("checked");
+        allCheckboxLabel[i].classList.remove("removed");
       }
     });
   }
