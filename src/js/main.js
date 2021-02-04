@@ -8,6 +8,11 @@ const addButton = document.querySelector(".js-btn");
 const closeButton = document.querySelector(".js-close");
 const submitButton = document.querySelector(".js-submit");
 const taskForm = document.querySelector(".js-form");
+const inputText = document.querySelector(".js-input");
+
+let inputValue = "";
+
+///////* GENERATE DATE AND PUT IT INTO DOM *//////////
 
 const months = [
   "Enero",
@@ -40,9 +45,29 @@ month.innerHTML = months[date.getMonth()];
 year.innerHTML = date.getFullYear();
 weekDay.innerHTML = weekDays[date.getDay()];
 
+///////* EVENTS *//////////
+
 addButton.addEventListener("click", () => {
   taskForm.classList.remove("hide");
 });
 closeButton.addEventListener("click", () => {
+  taskForm.classList.add("hide");
+});
+
+///////* CREATE LIST AND PUT IT INTO DOM *//////////
+
+const taskList = document.createElement("ul");
+listContainer.appendChild(taskList);
+
+inputText.addEventListener("keyup", (ev) => {
+  inputValue = ev.currentTarget.value;
+});
+
+submitButton.addEventListener("click", () => {
+  const task = document.createElement("li");
+  task.classList.add("list");
+  task.innerHTML = inputValue;
+  taskList.appendChild(task);
+  inputText.value = "";
   taskForm.classList.add("hide");
 });

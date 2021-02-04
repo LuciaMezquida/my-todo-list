@@ -65,8 +65,10 @@
     align-self: flex-end;
     font-size: 1.2rem;
   }
-  &__list {
+  &__task-list {
     height: 340px;
+    padding: 20px;
+    line-height: 25px;
   }
   &__add {
     display: flex;

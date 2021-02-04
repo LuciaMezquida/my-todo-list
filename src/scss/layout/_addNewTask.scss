@@ -27,16 +27,17 @@
     &--title {
       color: $color-light;
       align-self: flex-start;
-      margin-left: 3.2rem;
+      margin-left: 3rem;
     }
     &--input {
+      color: $color-light;
       outline-style: none;
       border: 1px solid $color-light;
       background-color: transparent;
       border-radius: 5px;
       width: 200px;
       height: 40px;
-      padding-left: 5px;
+      padding-left: 8px;
       &::placeholder {
         color: #ffffff71;
       }
