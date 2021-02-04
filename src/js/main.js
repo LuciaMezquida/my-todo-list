@@ -68,6 +68,7 @@ submitButton.addEventListener("click", () => {
   task.classList.add("list");
   const checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
+  checkbox.classList.add("checkbox");
   const checkboxLabel = document.createElement("label");
   checkboxLabel.innerHTML = inputValue;
   task.appendChild(checkbox);
