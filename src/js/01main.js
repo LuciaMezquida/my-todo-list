@@ -32,19 +32,19 @@ inputText.addEventListener("keyup", (ev) => {
   inputValue = ev.currentTarget.value;
 });
 
-submitButton.addEventListener("click", () => {
+const addTaskToTheList = () => {
   const task = document.createElement("li");
   const checkbox = document.createElement("input");
   const customCheckbox = document.createElement("span");
   const checkboxLabel = document.createElement("label");
-  task.classList.add("list");
+  checkbox.classList.add("checkbox");
   checkbox.setAttribute("type", "checkbox");
   checkbox.setAttribute("name", inputValue);
-  checkbox.classList.add("checkbox");
   customCheckbox.classList.add("custom-check");
   customCheckbox.setAttribute("name", inputValue);
   checkboxLabel.classList.add("task-label");
   checkboxLabel.innerHTML = inputValue;
+  task.classList.add("list");
   task.appendChild(checkbox);
   task.appendChild(customCheckbox);
   task.appendChild(checkboxLabel);
@@ -52,7 +52,8 @@ submitButton.addEventListener("click", () => {
   inputText.value = "";
   taskForm.classList.add("hide");
   selectCheckTask(customCheckbox);
-});
+};
+submitButton.addEventListener("click", addTaskToTheList);
 
 const selectCheckTask = (customCheckbox) => {
   allCheckbox = document.querySelectorAll(".checkbox");
@@ -71,5 +72,10 @@ const selectCheckTask = (customCheckbox) => {
     });
   }
 };
-
+document.addEventListener("keydown", (ev) => {
+  if (ev.key === "Enter") {
+    ev.preventDefault();
+    addTaskToTheList();
+  }
+});
 ///////* MANAGE EVERY TASK IN THE LIST *//////////
