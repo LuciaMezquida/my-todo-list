@@ -66,7 +66,12 @@ inputText.addEventListener("keyup", (ev) => {
 submitButton.addEventListener("click", () => {
   const task = document.createElement("li");
   task.classList.add("list");
-  task.innerHTML = inputValue;
+  const checkbox = document.createElement("input");
+  checkbox.setAttribute("type", "checkbox");
+  const checkboxLabel = document.createElement("label");
+  checkboxLabel.innerHTML = inputValue;
+  task.appendChild(checkbox);
+  task.appendChild(checkboxLabel);
   taskList.appendChild(task);
   inputText.value = "";
   taskForm.classList.add("hide");
