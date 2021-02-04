@@ -14,7 +14,6 @@ const taskList = document.createElement("ul");
 listContainer.appendChild(taskList);
 
 let inputValue = "";
-let allCheckbox = [];
 
 ///////* EVENTS *//////////
 
@@ -33,30 +32,33 @@ inputText.addEventListener("keyup", (ev) => {
 });
 
 const addTaskToTheList = () => {
-  const task = document.createElement("li");
-  const checkbox = document.createElement("input");
-  const customCheckbox = document.createElement("span");
-  const checkboxLabel = document.createElement("label");
-  checkbox.classList.add("checkbox");
-  checkbox.setAttribute("type", "checkbox");
-  checkbox.setAttribute("name", inputValue);
-  customCheckbox.classList.add("custom-check");
-  customCheckbox.setAttribute("name", inputValue);
-  checkboxLabel.classList.add("task-label");
-  checkboxLabel.innerHTML = inputValue;
-  task.classList.add("list");
-  task.appendChild(checkbox);
-  task.appendChild(customCheckbox);
-  task.appendChild(checkboxLabel);
-  taskList.appendChild(task);
-  inputText.value = "";
-  taskForm.classList.add("hide");
-  selectCheckTask(customCheckbox);
+  if (inputValue !== "") {
+    const task = document.createElement("li");
+    const checkbox = document.createElement("input");
+    const customCheckbox = document.createElement("span");
+    const checkboxLabel = document.createElement("label");
+    checkbox.classList.add("checkbox");
+    checkbox.setAttribute("type", "checkbox");
+    checkbox.setAttribute("name", inputValue);
+    customCheckbox.classList.add("custom-check");
+    customCheckbox.setAttribute("name", inputValue);
+    checkboxLabel.classList.add("task-label");
+    checkboxLabel.innerHTML = inputValue;
+    task.classList.add("list");
+    task.appendChild(checkbox);
+    task.appendChild(customCheckbox);
+    task.appendChild(checkboxLabel);
+    taskList.appendChild(task);
+    inputText.value = "";
+    taskForm.classList.add("hide");
+    selectCheckTask(customCheckbox);
+    inputValue = "";
+  }
 };
 submitButton.addEventListener("click", addTaskToTheList);
 
 const selectCheckTask = (customCheckbox) => {
-  allCheckbox = document.querySelectorAll(".checkbox");
+  const allCheckbox = document.querySelectorAll(".checkbox");
   const allCustomCheckbox = document.querySelectorAll(".custom-check");
   const allCheckboxLabel = document.querySelectorAll(".task-label");
 
