@@ -20,6 +20,7 @@ let allCheckbox = [];
 
 addButton.addEventListener("click", () => {
   taskForm.classList.remove("hide");
+  inputText.focus();
 });
 closeButton.addEventListener("click", () => {
   taskForm.classList.add("hide");
