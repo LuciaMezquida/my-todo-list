@@ -27,19 +27,13 @@ const addTaskToTheList = () => {
 };
 
 const printList = () => {
-  const savedTasks = JSON.parse(localStorage.getItem(localStorageName));
-  console.log(savedTasks);
   let listHtml = "";
-  for (let task of savedTasks) {
+  for (let task of taskList) {
     listHtml += task;
   }
   taskContainer.innerHTML = listHtml;
   selectCheckTask();
   //checkedTaskToTheEndOfTheList();
-};
-
-const setLocalStorage = () => {
-  localStorage.setItem(localStorageName, JSON.stringify(taskList));
 };
 
 // const checkedTaskToTheEndOfTheList = () => {

@@ -22,3 +22,4 @@ document.addEventListener("keydown", (ev) => {
     addTaskToTheList();
   }
 });
+getLocalStorage();
