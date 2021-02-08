@@ -1,35 +1,4 @@
-"use strict";
-let day = document.querySelector(".js-day");
-let month = document.querySelector(".js-month");
-let year = document.querySelector(".js-year");
-let weekDay = document.querySelector(".js-weekDay");
-const listContainer = document.querySelector(".js-list");
-const addButton = document.querySelector(".js-btn");
-const closeButton = document.querySelector(".js-close");
-const submitButton = document.querySelector(".js-submit");
-const taskForm = document.querySelector(".js-form");
-const inputText = document.querySelector(".js-input");
-
-const taskList = document.createElement("ul");
-listContainer.appendChild(taskList);
-
-let inputValue = "";
-
-///////* EVENTS *//////////
-
-addButton.addEventListener("click", () => {
-  taskForm.classList.remove("hide");
-  inputText.focus();
-});
-closeButton.addEventListener("click", () => {
-  taskForm.classList.add("hide");
-});
-
 ///////* CREATE LIST AND PUT IT INTO DOM *//////////
-
-inputText.addEventListener("keyup", (ev) => {
-  inputValue = ev.currentTarget.value;
-});
 
 const addTaskToTheList = () => {
   if (inputValue !== "") {
@@ -48,16 +17,44 @@ const addTaskToTheList = () => {
     task.appendChild(checkbox);
     task.appendChild(customCheckbox);
     task.appendChild(checkboxLabel);
-    taskList.appendChild(task);
+    taskList.push(task.outerHTML);
+    setLocalStorage();
+    printList();
     inputText.value = "";
-    taskForm.classList.add("hide");
-    selectCheckTask(customCheckbox);
     inputValue = "";
+    taskForm.classList.add("hide");
   }
 };
-submitButton.addEventListener("click", addTaskToTheList);
 
-const selectCheckTask = (customCheckbox) => {
+const printList = () => {
+  const savedTasks = JSON.parse(localStorage.getItem(localStorageName));
+  console.log(savedTasks);
+  let listHtml = "";
+  for (let task of savedTasks) {
+    listHtml += task;
+  }
+  taskContainer.innerHTML = listHtml;
+  selectCheckTask();
+  //checkedTaskToTheEndOfTheList();
+};
+
+const setLocalStorage = () => {
+  localStorage.setItem(localStorageName, JSON.stringify(taskList));
+};
+
+// const checkedTaskToTheEndOfTheList = () => {
+//   for (let i = 0; i < taskList.length; i++) {
+//     if (taskList[i].classList.contains("list")) {
+//       console.log("list");
+//     }
+//     if (taskList[i].classList.contains("check")) {
+//       console.log("check");
+//     }
+//   }
+// };
+
+///////* MANAGE EVERY TASK IN THE LIST *//////////
+const selectCheckTask = () => {
   const allCheckbox = document.querySelectorAll(".checkbox");
   const allCustomCheckbox = document.querySelectorAll(".custom-check");
   const allCheckboxLabel = document.querySelectorAll(".task-label");
@@ -67,17 +64,12 @@ const selectCheckTask = (customCheckbox) => {
       if (ev.currentTarget.checked) {
         allCustomCheckbox[i].classList.add("checked");
         allCheckboxLabel[i].classList.add("removed");
+        //taskList[i].classList.add("check");
       } else {
         allCustomCheckbox[i].classList.remove("checked");
         allCheckboxLabel[i].classList.remove("removed");
+        //taskList[i].classList.remove("check");
       }
     });
   }
 };
-document.addEventListener("keydown", (ev) => {
-  if (ev.key === "Enter") {
-    ev.preventDefault();
-    addTaskToTheList();
-  }
-});
-///////* MANAGE EVERY TASK IN THE LIST *//////////
