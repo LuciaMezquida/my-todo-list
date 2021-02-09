@@ -14,12 +14,12 @@ inputText.addEventListener("keyup", (ev) => {
   inputValue = ev.currentTarget.value;
 });
 
-submitButton.addEventListener("click", addTaskToTheList);
-//Make submitButton with Enter key
+//Add tasks to the list
+submitButton.addEventListener("click", createElements);
 document.addEventListener("keydown", (ev) => {
   if (ev.key === "Enter") {
     ev.preventDefault();
-    addTaskToTheList();
+    createElements();
   }
 });
 getLocalStorage();

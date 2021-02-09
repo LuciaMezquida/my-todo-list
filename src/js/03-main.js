@@ -1,8 +1,7 @@
 ///////* CREATE LIST AND PUT IT INTO DOM *//////////
 
-const addTaskToTheList = () => {
+const createElements = () => {
   if (inputValue !== "") {
-    const task = document.createElement("li");
     const checkbox = document.createElement("input");
     const customCheckbox = document.createElement("span");
     const checkboxLabel = document.createElement("label");
@@ -13,17 +12,19 @@ const addTaskToTheList = () => {
     customCheckbox.setAttribute("name", inputValue);
     checkboxLabel.classList.add("task-label");
     checkboxLabel.innerHTML = inputValue;
-    task.classList.add("list");
-    task.appendChild(checkbox);
-    task.appendChild(customCheckbox);
-    task.appendChild(checkboxLabel);
-    taskList.push(task.outerHTML);
-    setLocalStorage();
+    addTaskToTheList(checkbox, customCheckbox, checkboxLabel);
     printList();
-    inputText.value = "";
-    inputValue = "";
-    taskForm.classList.add("hide");
+    deleteInputAndForm();
   }
+};
+const addTaskToTheList = (checkbox, customCheckbox, checkboxLabel) => {
+  const task = document.createElement("li");
+  task.classList.add("list");
+  task.appendChild(checkbox);
+  task.appendChild(customCheckbox);
+  task.appendChild(checkboxLabel);
+  taskList.push(task.outerHTML);
+  setLocalStorage();
 };
 
 const printList = () => {
@@ -33,19 +34,12 @@ const printList = () => {
   }
   taskContainer.innerHTML = listHtml;
   selectCheckTask();
-  //checkedTaskToTheEndOfTheList();
 };
-
-// const checkedTaskToTheEndOfTheList = () => {
-//   for (let i = 0; i < taskList.length; i++) {
-//     if (taskList[i].classList.contains("list")) {
-//       console.log("list");
-//     }
-//     if (taskList[i].classList.contains("check")) {
-//       console.log("check");
-//     }
-//   }
-// };
+const deleteInputAndForm = () => {
+  inputText.value = "";
+  inputValue = "";
+  taskForm.classList.add("hide");
+};
 
 ///////* MANAGE EVERY TASK IN THE LIST *//////////
 const selectCheckTask = () => {
@@ -58,12 +52,24 @@ const selectCheckTask = () => {
       if (ev.currentTarget.checked) {
         allCustomCheckbox[i].classList.add("checked");
         allCheckboxLabel[i].classList.add("removed");
-        //taskList[i].classList.add("check");
+        eraseCheckedTask(i);
+        console.log(taskList);
       } else {
         allCustomCheckbox[i].classList.remove("checked");
         allCheckboxLabel[i].classList.remove("removed");
-        //taskList[i].classList.remove("check");
+        recoverDeletedTask();
       }
     });
   }
+};
+const eraseCheckedTask = (i) => {
+  taskList.push(taskList[i]);
+  taskList.splice(i, 1);
+  setLocalStorage();
+};
+
+const recoverDeletedTask = () => {
+  let lastTask = taskList.pop();
+  taskList.splice(0, 0, lastTask);
+  setLocalStorage();
 };

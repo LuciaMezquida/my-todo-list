@@ -4,7 +4,7 @@ const setLocalStorage = () => {
 
 const getLocalStorage = () => {
   const savedTasks = JSON.parse(localStorage.getItem(localStorageName));
-  if (savedTasks.length < 0) {
+  if (savedTasks === null) {
     addTaskToTheList();
   }
   taskList = savedTasks;
