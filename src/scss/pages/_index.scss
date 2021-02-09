@@ -66,6 +66,7 @@
     font-size: 1.2rem;
   }
   &__task-list {
+    overflow: scroll;
     height: 340px;
     padding: 20px 40px;
     line-height: 35px;

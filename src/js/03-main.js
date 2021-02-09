@@ -66,6 +66,7 @@ const eraseCheckedTask = (i) => {
   taskList.push(taskList[i]);
   taskList.splice(i, 1);
   setLocalStorage();
+  //printList();
 };
 
 const recoverDeletedTask = () => {
