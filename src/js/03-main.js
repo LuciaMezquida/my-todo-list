@@ -19,7 +19,7 @@ const createElements = () => {
 };
 const addTaskToTheList = (checkbox, customCheckbox, checkboxLabel) => {
   const task = document.createElement("li");
-  task.classList.add("list");
+  task.classList.add("list", "task");
   task.appendChild(checkbox);
   task.appendChild(customCheckbox);
   task.appendChild(checkboxLabel);
@@ -51,11 +51,13 @@ const selectCheckTask = () => {
     allCheckbox[i].addEventListener("click", (ev) => {
       if (ev.currentTarget.checked) {
         allCustomCheckbox[i].classList.add("checked");
+        console.log(taskList);
         allCheckboxLabel[i].classList.add("removed");
         eraseCheckedTask(i);
-        console.log(taskList);
       } else {
+        console.log("ey");
         allCustomCheckbox[i].classList.remove("checked");
+        console.log(taskList);
         allCheckboxLabel[i].classList.remove("removed");
         recoverDeletedTask();
       }
@@ -63,6 +65,7 @@ const selectCheckTask = () => {
   }
 };
 const eraseCheckedTask = (i) => {
+  //reorderTasklist();
   taskList.push(taskList[i]);
   taskList.splice(i, 1);
   setLocalStorage();
@@ -73,4 +76,14 @@ const recoverDeletedTask = () => {
   let lastTask = taskList.pop();
   taskList.splice(0, 0, lastTask);
   setLocalStorage();
+  printList();
+};
+
+const reorderTasklist = () => {
+  let tasks = document.querySelectorAll(".task");
+  tasks = Array.from(tasks);
+  taskList = [];
+  for (let j = 0; j < tasks.length; j++) {
+    taskList.push(tasks[j].outerHTML);
+  }
 };
