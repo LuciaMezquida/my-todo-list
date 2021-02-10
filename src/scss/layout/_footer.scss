@@ -13,7 +13,7 @@
   &__owner {
     font-size: 0.6rem;
     @media all and(min-width: 768px) {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
   &__nav {
@@ -21,7 +21,7 @@
   }
   &__link {
     color: $color-light;
-    padding-right: 1.5rem;
+    padding-right: 1.7rem;
     transition: ease 0.8s;
     &:hover {
       color: $color-main;

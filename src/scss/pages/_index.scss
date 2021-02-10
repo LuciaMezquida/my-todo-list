@@ -5,8 +5,8 @@
   height: 96vh;
   &__layerSmall {
     z-index: 1;
-    height: 500px;
-    width: 310px;
+    height: 540px;
+    width: 330px;
     background-color: $color-light;
     position: absolute;
     border-radius: 5px;
@@ -18,8 +18,8 @@
     }
   }
   &__layerMedium {
-    height: 480px;
-    width: 320px;
+    height: 520px;
+    width: 340px;
     position: absolute;
     background-color: $color-light;
     border-radius: 5px;
@@ -32,8 +32,8 @@
   }
   &__container {
     z-index: 2;
-    height: 520px;
-    width: 300px;
+    height: 560px;
+    width: 320px;
     background-color: $color-light;
     border-radius: 5px;
     -webkit-box-shadow: 1px 1px 15px -5px #021916;
@@ -45,29 +45,29 @@
     display: flex;
     justify-content: space-between;
     background-color: $color-tertiary;
-    height: 120px;
+    height: 130px;
     border-radius: 5px 5px 0 0;
   }
   &__header-day-container {
     display: flex;
   }
   &__header-day {
-    font-size: 4.8rem;
+    font-size: 5rem;
     align-self: center;
   }
   &__header-container {
     align-self: center;
     &--month {
-      font-size: 1.9rem;
+      font-size: 2.1rem;
     }
   }
   &__header-weekday {
     align-self: flex-end;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   &__task-list {
     overflow: scroll;
-    height: 340px;
+    height: 360px;
     padding: 20px 40px;
     line-height: 35px;
   }
@@ -76,13 +76,13 @@
     justify-content: center;
     &--btn {
       cursor: pointer;
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       margin: auto;
       color: $color-tertiary;
       border: 4px solid $color-main;
       border-radius: 50%;
-      font-size: 25px;
+      font-size: 27px;
       outline-style: none;
       &:active {
         transform: scale(0.95);
@@ -95,24 +95,32 @@
   position: relative;
   z-index: 1;
   margin-right: 5px;
-  transform: translate(22px, 1px);
+  transform: translate(28px, 3px);
   opacity: 0;
+  width: 20px;
+  height: 20px;
 }
 .custom-check {
   transform: translate(0, 6px);
   margin: 5px 5px 0 0;
-  border: 2px solid $color-main;
+  border: 3px solid $color-main;
   display: inline-block;
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
 }
 .checked {
   background-image: url(https://img.icons8.com/metro/16/000000/checkmark.png);
   background-position: center;
-  border: 2px solid $color-tertiary;
+  border: 3px solid $color-tertiary;
 }
 .removed {
   text-decoration: line-through;
   color: rgba(128, 128, 128, 0.507);
+}
+.task {
+  color: $color-secondary;
+  @media all and(min-width: 768px) {
+    font-size: 1.2rem;
+  }
 }

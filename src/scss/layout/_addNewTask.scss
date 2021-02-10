@@ -14,8 +14,8 @@
     background-color: $color-tertiary;
     border-radius: 5px;
     top: 29rem;
-    width: 280px;
-    height: 180px;
+    width: 300px;
+    height: 190px;
     -webkit-box-shadow: 1px 1px 15px -3px #000000;
     box-shadow: 1px 1px 15px -3px #000000;
   }
@@ -27,7 +27,8 @@
     &--title {
       color: $color-light;
       align-self: flex-start;
-      margin-left: 3rem;
+      margin: 0.4rem 2.8rem 0.4rem;
+      font-size: 1.1rem;
     }
     &--input {
       color: $color-light;
@@ -35,21 +36,23 @@
       border: 1px solid $color-light;
       background-color: transparent;
       border-radius: 5px;
-      width: 200px;
+      width: 220px;
       height: 40px;
       padding-left: 8px;
       &::placeholder {
         color: #ffffff71;
+        font-size: 0.9rem;
       }
     }
     &--submit {
       cursor: pointer;
       margin: 1.6rem 0;
+      font-size: 1rem;
       color: $color-light;
       background-color: transparent;
       border-radius: 20px;
-      width: 100px;
-      height: 35px;
+      width: 110px;
+      height: 36px;
       border: 1px solid $color-light;
       outline-style: none;
       &:hover {
@@ -60,7 +63,7 @@
   &__close {
     cursor: pointer;
     position: relative;
-    left: 249px;
+    left: 269px;
     margin: 2px;
     width: 27px;
     height: 27px;
