@@ -12,7 +12,7 @@ Vamos a realizar una aplicación simple de lista de tareas con una funcionalidad
 
 > **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/)
 
-### Pasos a seguir cada vez que queremos arrancar un proyecto desde cero:
+### Arrancar el proyecto desde cero:
 
 Si has decidido clonar este repo,:
 1. **Abre una terminal** en la carpeta raíz de tu repositorio.
@@ -22,9 +22,9 @@ Si has decidido clonar este repo,:
 npm install
 ```
 
-### Pasos para arrancar el proyecto:
+### Para arrancar el proyecto:
 
-Una vez hemos instalado las dependencias, vamos a arrancar el proyecto. **El proyecto hay que arrancarlo cada vez que te pongas a programar.** Para ello ejecuta el comando:
+Una vez hemos instalado las dependencias, vamos a arrancar el proyecto. Para ello ejecuta el comando:
 
 ```bash
 npm start
@@ -35,8 +35,6 @@ npm start
 ![Imagen de la web](https://i.ibb.co/QMDzd8C/Captura-de-pantalla-2021-02-08-a-las-19-45-05.png")
 
 ## Estructura de carpetas
-
-La estructura de carpetas tiene esta pinta:
 
 ```
 src
