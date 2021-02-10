@@ -3,63 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adalab Web Starter Kit</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <meta property="og:title" content="My TODO list" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/QMDzd8C/Captura-de-pantalla-2021-02-08-a-las-19-45-05.png"
+      alt="Imagen de My TODO list"
+    />
+    <title>My TODO list</title>
+    <script
+      src="https://kit.fontawesome.com/476ba4bf26.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="icon" href="./assets/images/favicon.png" />
+    <link rel="icon" href="./assets/images/list.png" />
   </head>
 
   <body>
     <div class="page">
-      <header class="page__header">
-        <img src="./assets/images/logo-adalab.png" alt="Adalab">
-        <h1>Bienvenidos a Adalab</h1>
-      </header>
+      <main class="main">
+        <div class="main__layerSmall">
+          <article class="main__header"></article>
+        </div>
+        <div class="main__layerMedium">
+          <article class="main__header"></article>
+        </div>
+        <section class="main__container">
+          <article class="main__header">
+            <div class="main__header-day-container">
+              <div class="main__header-day js-day"></div>
+              <div class="main__header-container">
+                <div class="main__header-container--month js-month"></div>
+                <div class="main__header-container--year js-year"></div>
+              </div>
+            </div>
+            <div class="main__header-weekday js-weekDay"></div>
+          </article>
+          <article class="main__task-list js-list"></article>
+          <section class="addTask js-form hide">
+            <dic class="addTask__container">
+              <button class="addTask__close js-close" title="Cerrar">
+                &#x2715
+              </button>
+              <form action="" class="addTask__form">
+                <label for="task" class="addTask__form--title">Nueva tarea</label>
+                <input id="task" type="text" class="addTask__form--input js-input" placeholder="ej: terminar app"/>
+                <input
+                  class="addTask__form--submit js-submit"
+                  type="button"
+                  value="Submit"
+                  title="Añadir tarea"
+                />
+              </form>
+            </dic>
+          </section>
 
-      <main class="page__main">
-        <h2>Este es el starter kit de Adalab</h2>
-        <p>Lo usamos para aprender:</p>
-        <ul class="main__list">
-          <li>Sass</li>
-          <li>HTML partials</li>
-          <li>Gulp</li>
-          <li>y muchas cosas más</li>
-        </ul>
-        <p>Si quieres saber cúales son las rutas correctas para:</p>
-        <ul class="main__list">
-          <li>
-            una <code class="code">&lt;img /&gt;</code> mira el fichero
-            <code class="code">./src/html/partials/header.html</code>.
-          </li>
-          <li>
-            y para un <code class="code">background-image</code> mira el fichero
-            <code class="code">./src/html/scss/layout/_page.scss</code>.
-          </li>
-        </ul>
-        <p>
-          Si quieres saber cómo usar un partial HTML dentro de otro partial, busca en la carperta
-          <code class="code">./src/html/index.html</code> y
-          <code class="code">./src/html/partials/main.html</code>, y verás cómo estamos creando estos
-          enlaces:
-        </p>
-        <ul class="main__list">
-          <li>
-            <a class="link__adalab" href="https://adalab.es">Adalab</a>
-
-          </li>
-          <li>
-            <a class="" href="./more-info.html">Más info del starter kit</a>
-
-          </li>
-        </ul>
+          <article class="main__add">
+            <button title="Añadir nueva tarea" class="main__add--btn js-btn">
+              <i class="fas fa-plus"></i>
+            </button>
+          </article>
+        </section>
       </main>
 
-      <footer class="page__footer">
-        <small>
-          &copy; Todos los derechos reservados
-          <a class="link__adalab" href="https://adalab.es">Adalab</a>
-
+      <footer class="footer">
+        <small class="footer__owner">
+          Made with <i class="fas fa-cat"></i> by Lucia Mezquida
         </small>
+        <nav>
+          <ul class="footer__nav">
+            <li class="list">
+              <a
+                href="//www.linkedin.com/in/luciamezquidajuan/"
+                class="footer__link"
+                title="Linkedin"
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </li>
+            <li class="list">
+              <a
+                href="//github.com/LuciaMezquida"
+                class="footer__link"
+                title="Github"
+                target="_blank"
+                ><i class="fab fa-github-alt"></i
+              ></a>
+            </li>
+            <li class="list">
+              <a
+                href="//twitter.com/LuciCodes"
+                class="footer__link"
+                title="Twitter"
+                target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
       </footer>
 
     </div>
