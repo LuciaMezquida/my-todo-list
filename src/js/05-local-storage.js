@@ -1,3 +1,5 @@
+///////* LOCAL STORAGE *//////////
+
 const setLocalStorage = () => {
   localStorage.setItem(localStorageName, JSON.stringify(taskList));
 };
