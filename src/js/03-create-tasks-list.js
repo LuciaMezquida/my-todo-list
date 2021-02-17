@@ -15,14 +15,24 @@ const createElements = () => {
     checkboxLabel.classList.add("task-label");
     checkboxLabel.innerHTML = inputValue;
 
-    addTaskToTheList(checkbox, customCheckbox, checkboxLabel);
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("deleteBtn");
+    deleteButton.innerHTML = '<i class="far fa-trash-alt"></i>';
+
+    addTaskToTheList(checkbox, customCheckbox, checkboxLabel, deleteButton);
     printList();
     deleteInputAndForm();
   }
 };
-const addTaskToTheList = (checkbox, customCheckbox, checkboxLabel) => {
+const addTaskToTheList = (
+  checkbox,
+  customCheckbox,
+  checkboxLabel,
+  deleteButton
+) => {
   const task = document.createElement("li");
   task.classList.add("list", "task");
+  task.appendChild(deleteButton);
   task.appendChild(checkbox);
   task.appendChild(customCheckbox);
   task.appendChild(checkboxLabel);

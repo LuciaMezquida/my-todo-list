@@ -18,6 +18,13 @@ const selectCheckTask = () => {
     });
   }
 };
+
+const allDeleteButton = document.querySelectorAll(".deleteBtn");
+for (let j = 0; j < allDeleteButton.length; j++) {
+  allDeleteButton[j].addEventListener("click", (ev) => {
+    console.log("hola");
+  });
+}
 const sortTasks = () => {
   let tasks = document.querySelectorAll(".task");
   tasks = Array.from(tasks);
