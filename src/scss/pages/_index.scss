@@ -134,11 +134,13 @@
     border: none;
     position: relative;
     right: 0;
-    opacity: 0.3;
+    opacity: 0.2;
     outline-style: none;
     transition: ease 0.5s;
+    border-radius: 50%;
     &:hover {
       opacity: 0.9;
+      background-color: #80808050;
     }
   }
 }
