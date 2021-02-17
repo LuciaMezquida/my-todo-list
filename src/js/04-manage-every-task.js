@@ -17,14 +17,20 @@ const selectCheckTask = () => {
       }
     });
   }
+  deleteEveryTask();
 };
-
-const allDeleteButton = document.querySelectorAll(".deleteBtn");
-for (let j = 0; j < allDeleteButton.length; j++) {
-  allDeleteButton[j].addEventListener("click", (ev) => {
-    console.log("hola");
-  });
-}
+const deleteEveryTask = () => {
+  const allDeleteButton = document.querySelectorAll(".deleteBtn");
+  let tasks = document.querySelectorAll(".task");
+  tasks = Array.from(tasks);
+  for (let j = 0; j < allDeleteButton.length; j++) {
+    allDeleteButton[j].addEventListener("click", () => {
+      tasks.splice(j, 1);
+      displayReorderTasks(tasks);
+      printList();
+    });
+  }
+};
 const sortTasks = () => {
   let tasks = document.querySelectorAll(".task");
   tasks = Array.from(tasks);

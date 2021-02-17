@@ -37,6 +37,7 @@ const addTaskToTheList = (
   task.appendChild(customCheckbox);
   task.appendChild(checkboxLabel);
   taskList.push(task.outerHTML);
+
   setLocalStorage();
 };
 
