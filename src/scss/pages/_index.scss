@@ -85,6 +85,22 @@
       border-radius: 50%;
       font-size: 27px;
       outline-style: none;
+      transition: 0.5s ease;
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    &--delete {
+      cursor: pointer;
+      width: 55px;
+      height: 55px;
+      margin: auto;
+      color: $color-tertiary;
+      border: 4px solid $color-main;
+      border-radius: 50%;
+      font-size: 27px;
+      outline-style: none;
+      transition: 0.5s ease;
       &:active {
         transform: scale(0.95);
       }
@@ -138,9 +154,24 @@
     outline-style: none;
     transition: ease 0.5s;
     border-radius: 50%;
+    animation: shake 0.3s infinite;
     &:hover {
       opacity: 0.9;
       background-color: #80808050;
     }
+  }
+}
+@keyframes shake {
+  0% {
+    transform: rotate(-30deg);
+  }
+  25% {
+    transform: srotate(0deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: srotate(0deg);
   }
 }

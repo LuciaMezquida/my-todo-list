@@ -16,7 +16,7 @@ const createElements = () => {
     checkboxLabel.innerHTML = inputValue;
 
     const deleteButton = document.createElement("button");
-    deleteButton.classList.add("deleteBtn");
+    deleteButton.classList.add("deleteBtn", "hide");
     deleteButton.innerHTML = '<i class="far fa-trash-alt"></i>';
 
     addTaskToTheList(checkbox, customCheckbox, checkboxLabel, deleteButton);

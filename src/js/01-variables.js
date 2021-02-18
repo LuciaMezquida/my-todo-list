@@ -9,6 +9,7 @@ let weekDay = document.querySelector(".js-weekDay");
 const addButton = document.querySelector(".js-btn");
 const closeButton = document.querySelector(".js-close");
 const submitButton = document.querySelector(".js-submit");
+const deleteButton = document.querySelector(".js-delete");
 
 //Containers
 const mainContainer = document.querySelector(".js-list");
