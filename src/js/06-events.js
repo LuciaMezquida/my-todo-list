@@ -20,6 +20,10 @@ deleteButton.addEventListener("click", () => {
   tasks = Array.from(tasks);
   for (let j = 0; j < allDeleteButton.length; j++) {
     allDeleteButton[j].classList.toggle("hide");
+    allDeleteButton[j].classList.contains("hide")
+      ? (deleteButton.innerHTML = "<i class='fas fa-times'></i>")
+      : (deleteButton.innerHTML = "<i class='far fa-thumbs-up'></i>");
+
     displayReorderTasks(tasks);
   }
 });
