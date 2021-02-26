@@ -15,6 +15,7 @@ const deleteButton = document.querySelector(".js-delete");
 const mainContainer = document.querySelector(".js-list");
 const taskForm = document.querySelector(".js-form");
 const inputText = document.querySelector(".js-input");
+const formElement = document.querySelector(".js-taskForm");
 
 //Create elements
 const taskContainer = document.createElement("ul");

@@ -30,11 +30,9 @@ deleteButton.addEventListener("click", () => {
 
 //Add tasks to the list
 submitButton.addEventListener("click", createElements);
-document.addEventListener("keydown", (ev) => {
-  if (ev.key === "Enter") {
-    ev.preventDefault();
-    createElements();
-  }
+formElement.addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  createElements();
 });
 
 getLocalStorage();
