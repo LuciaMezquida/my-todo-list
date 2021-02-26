@@ -1,5 +1,6 @@
 ///////* CREATE LIST AND PUT IT INTO DOM *//////////
 
+//Create elements
 const createElements = () => {
   if (inputValue !== "") {
     const checkbox = document.createElement("input");
@@ -24,6 +25,8 @@ const createElements = () => {
     deleteInputAndForm();
   }
 };
+
+//Add elements to the list
 const addTaskToTheList = (
   checkbox,
   customCheckbox,
@@ -41,6 +44,7 @@ const addTaskToTheList = (
   setLocalStorage();
 };
 
+//Print every list item
 const printList = () => {
   let listHtml = "";
   for (let task of taskList) {
@@ -49,6 +53,8 @@ const printList = () => {
   taskContainer.innerHTML = listHtml;
   selectCheckTask();
 };
+
+//Delete input text, input value and modal
 const deleteInputAndForm = () => {
   inputText.value = "";
   inputValue = "";
