@@ -14,6 +14,7 @@ inputText.addEventListener("keyup", (ev) => {
   inputValue = ev.currentTarget.value;
 });
 
+//Manage every delete button
 deleteButton.addEventListener("click", () => {
   const allDeleteButton = document.querySelectorAll(".deleteBtn");
   let tasks = document.querySelectorAll(".task");

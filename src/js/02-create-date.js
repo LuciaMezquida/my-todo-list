@@ -25,8 +25,11 @@ const weekDays = [
   "Sabado",
 ];
 
-const date = new Date();
-day.innerHTML = date.getDate();
-month.innerHTML = months[date.getMonth()];
-year.innerHTML = date.getFullYear();
-weekDay.innerHTML = weekDays[date.getDay()];
+const createDate = () => {
+  const date = new Date();
+  day.innerHTML = date.getDate();
+  month.innerHTML = months[date.getMonth()];
+  year.innerHTML = date.getFullYear();
+  weekDay.innerHTML = weekDays[date.getDay()];
+};
+createDate();
