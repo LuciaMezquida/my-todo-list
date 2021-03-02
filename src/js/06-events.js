@@ -25,7 +25,7 @@ deleteButton.addEventListener("click", () => {
       ? (deleteButton.innerHTML = "<i class='fas fa-times'></i>")
       : (deleteButton.innerHTML = "<i class='far fa-thumbs-up'></i>");
 
-    displayReorderTasks(tasks);
+    displayReorderedTasks(tasks);
   }
 });
 
@@ -37,3 +37,4 @@ formElement.addEventListener("submit", (ev) => {
 });
 
 getLocalStorage();
+printList();

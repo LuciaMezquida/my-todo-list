@@ -10,5 +10,5 @@ const getLocalStorage = () => {
     addTaskToTheList();
   }
   taskList = savedTasks;
-  printList();
+  return taskList;
 };

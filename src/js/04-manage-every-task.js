@@ -6,15 +6,9 @@ const selectCheckTask = () => {
 
   for (let i = 0; i < allCheckbox.length; i++) {
     allCheckbox[i].addEventListener("click", (ev) => {
-      if (ev.currentTarget.checked) {
-        allCustomCheckbox[i].classList.add("checked");
-        allCheckboxLabel[i].classList.add("removed");
-        sortTasks();
-      } else {
-        allCustomCheckbox[i].classList.remove("checked");
-        allCheckboxLabel[i].classList.remove("removed");
-        sortTasks();
-      }
+      allCustomCheckbox[i].classList.toggle("checked");
+      allCheckboxLabel[i].classList.toggle("removed");
+      sortTasks(ev);
     });
   }
   deleteEveryTask();
@@ -26,7 +20,7 @@ const deleteEveryTask = () => {
   for (let j = 0; j < allDeleteButton.length; j++) {
     allDeleteButton[j].addEventListener("click", () => {
       tasks.splice(j, 1);
-      displayReorderTasks(tasks);
+      displayReorderedTasks(tasks);
       printList();
     });
   }
@@ -43,10 +37,10 @@ const sortTasks = () => {
   const lastUndone = undoneTasks.pop();
   undoneTasks.unshift(lastUndone);
   tasks = undoneTasks.concat(doneTasks);
-  displayReorderTasks(tasks);
+  displayReorderedTasks(tasks);
 };
 
-const displayReorderTasks = (tasks) => {
+const displayReorderedTasks = (tasks) => {
   taskList = [];
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i] !== undefined) {
