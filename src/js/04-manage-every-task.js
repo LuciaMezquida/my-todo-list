@@ -9,10 +9,17 @@ const selectCheckTask = () => {
       if (ev.currentTarget.checked) {
         allCustomCheckbox[i].classList.add("checked");
         allCheckboxLabel[i].classList.add("removed");
-        sortTasks();
+        taskList[i].complete = true;
+        const completedTask = taskList.splice(i, 1);
+        taskList.push(completedTask[0]);
+        setLocalStorage();
+        console.log(taskList);
+        printList();
       } else {
         allCustomCheckbox[i].classList.remove("checked");
         allCheckboxLabel[i].classList.remove("removed");
+        taskList[i].complete = false;
+        setLocalStorage();
         sortTasks();
       }
     });
@@ -31,7 +38,7 @@ const deleteEveryTask = () => {
     });
   }
 };
-const sortTasks = () => {
+const sortedTasks = () => {
   let tasks = document.querySelectorAll(".task");
   tasks = Array.from(tasks);
   const doneTasks = tasks.filter((item) =>
@@ -45,6 +52,16 @@ const sortTasks = () => {
   tasks = undoneTasks.concat(doneTasks);
   displayReorderedTasks(tasks);
 };
+// const sortTasks = () => {
+//   for (let i = 0; i < taskList.length; i++) {
+//     if (taskList[i].complete === true) {
+//       const completedTask = taskList.splice(i, 1);
+//       taskList.push(completedTask[0]);
+//       setLocalStorage();
+//       printList();
+//     }
+//   }
+// };
 
 const displayReorderedTasks = (tasks) => {
   taskList = [];
