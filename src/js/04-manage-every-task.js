@@ -26,7 +26,7 @@ const deleteEveryTask = () => {
   for (let j = 0; j < allDeleteButton.length; j++) {
     allDeleteButton[j].addEventListener("click", () => {
       tasks.splice(j, 1);
-      displayReorderTasks(tasks);
+      displayReorderedTasks(tasks);
       printList();
     });
   }
@@ -43,15 +43,18 @@ const sortTasks = () => {
   const lastUndone = undoneTasks.pop();
   undoneTasks.unshift(lastUndone);
   tasks = undoneTasks.concat(doneTasks);
-  displayReorderTasks(tasks);
+  displayReorderedTasks(tasks);
 };
 
-const displayReorderTasks = (tasks) => {
+const displayReorderedTasks = (tasks) => {
   taskList = [];
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i] !== undefined) {
       taskContainer.appendChild(tasks[i]);
-      taskList.push(tasks[i].outerHTML);
+      taskList.push({
+        task: tasks[i].outerHTML,
+        complete: false,
+      });
     }
   }
   setLocalStorage();

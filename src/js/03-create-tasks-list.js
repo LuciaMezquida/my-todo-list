@@ -39,7 +39,10 @@ const addTaskToTheList = (
   task.appendChild(checkbox);
   task.appendChild(customCheckbox);
   task.appendChild(checkboxLabel);
-  taskList.push(task.outerHTML);
+  taskList.push({
+    task: task.outerHTML,
+    complete: false,
+  });
 
   setLocalStorage();
 };
@@ -48,7 +51,7 @@ const addTaskToTheList = (
 const printList = () => {
   let listHtml = "";
   for (let task of taskList) {
-    listHtml += task;
+    listHtml += task.task;
   }
   taskContainer.innerHTML = listHtml;
   selectCheckTask();
